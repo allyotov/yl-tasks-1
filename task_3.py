@@ -1,23 +1,9 @@
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
-
 def zeros(n):
-    num_zeros = 0
-    for i in range(1, n + 1):
-        if i % 5 == 0:
-            logging.debug('dev. by 5: %s' % i)
-            num_zeros += 1
-            new_i = i
-            while True:
-                new_i = new_i / 5
-                if new_i % 5 == 0:
-                    num_zeros += 1
-                else:
-                    break
-    logging.debug('Number: %s' % n)
-    logging.debug('Trailing zeros: %s' % num_zeros)
-    return num_zeros
+    n_zeros = 0
+    while(n >= 5):
+        n //= 5
+        n_zeros += n
+    return n_zeros
 
 
 if __name__ == '__main__':
