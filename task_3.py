@@ -2,6 +2,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 def zeros(n):
+    logging.debug('Исходное число n = %s' % n)
     pow_of_5 = 5
     zeros = 0
     iter = 0
@@ -9,7 +10,7 @@ def zeros(n):
         iter += 1
         zeros += n // pow_of_5
         pow_of_5 *= 5
-    logging.debug('Исходное число n = %s, количество итераций цикла: %s' % (n, iter))
+    logging.debug('количество итераций цикла: %s' % iter)
     return zeros
 
 
